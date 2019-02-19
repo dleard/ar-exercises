@@ -11,3 +11,5 @@ puts "Exercise 8"
 puts "----------"
 
 # Your code goes here ...
+@store1.employees.create(first_name: "Friendlyneighbourhood", last_name: "Spiderman", hourly_rate: 90)
+Employee.find_by(first_name: "Friendlyneighbourhood").attributes.each { |key, value| puts "#{key}: #{value}"}
