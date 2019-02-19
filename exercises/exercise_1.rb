@@ -14,10 +14,4 @@ puts Store.count
 Store.find_by(name: 'burnaby').attributes.each_value { |value| puts value }
 
 @store1 = Store.find_by(id: 1)
-
 @store2 = Store.find_by(id: 2)
-@store1.name = "victoria"
-puts @store1.name
-@store1.save
-
-puts Store.find_by(name: 'victoria').name
