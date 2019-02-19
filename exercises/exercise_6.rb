@@ -19,5 +19,5 @@ puts "----------"
 @store2.employees.create(first_name: "Thanos", last_name: "Snappyfinger", hourly_rate: 900)
 @store2.employees.create(first_name: "Loki", last_name: "Odinson", hourly_rate: 1100)
 
-puts "---Find and print Tony Stark's employee attributes---"
-Employee.find_by(first_name: "Tony").attributes.each { |key, value| puts "#{key}: #{value}"}
+puts "---Find and print Hulk's employee attributes---"
+Employee.find_by(first_name: "Hulk").attributes.each { |key, value| puts "#{key}: #{value}"}
