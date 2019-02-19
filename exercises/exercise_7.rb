@@ -11,3 +11,9 @@ puts "----------"
 
 # Your code goes here ...
 puts Employee.count
+
+puts "Enter a store name: "
+new_store = gets.chomp
+
+user_store = Store.create(name: new_store)
+user_store.errors.full_messages.each { |error| puts error}

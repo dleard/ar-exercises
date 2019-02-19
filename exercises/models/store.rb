@@ -4,12 +4,13 @@ class Store < ActiveRecord::Base
   validates_presence_of :annual_revenue
   validates :annual_revenue, numericality: { only_integer: true, greater_than: 0}
 
-  validate :must_carry_one_type
+  validate :must_carry_one_type, on: :create
  
   def must_carry_one_type
-    if mens_apparel == false && womens_apparel == false
-      errors.add(:mens_apparel, "must carry one type of clothing")
-      errors.add(:womens_apparel, "must carry one type of clothing")
+    puts :mens_apparel
+    if (mens_apparel == false && womens_apparel == false) || (!mens_apparel.present? && !womens_apparel.present?)
+      errors.add(:mens_apparel, "must carry at least one type of clothing")
+      errors.add(:womens_apparel, "must carry at least one type of clothing")
     end
   end
 end
